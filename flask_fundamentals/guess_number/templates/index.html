@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Guess the Right Number</title>
+</head>
+<body>
+    <div style="width: 600px; height: 500px; margin: 50px auto;">
+        <h2 class="text-center">Welcome to the Great Number Game!</h2>
+        <h4 class="text-center">I am thinking of a number between 1 and 100</h4>
+        <h6 class="text-center">Take a guess!</h6>
+
+        <form class="text-center" action="/enternumber" method="POST">
+            <input type="number" name="yournumber">
+            <input class="btn btn-primary" type="submit" name='change' value="Submit">
+        </form>
+
+        {% if {{clientNumber}} < {{randomNum}} %} 
+            <div style="width: 600px; height: 500px; margin: 50px auto; background-color: red">
+                <h2 class="text-center"> The Number is Less !</h2>
+                <h5 class="text-center"> your number is {{clientNumber}}</h5>
+                <h5 class="text-center"> Generated number is {{randomNum}}</h5>
+            </div>
+        {% endif %}
+
+        {% if {{clientNumber}} > {{randomNum}} %} 
+            <div style="width: 600px; height: 500px; margin: 50px auto; background-color: red">
+                <h2 class="text-center"> The Number is Less !</h2>
+                <h5 class="text-center"> your number is {{clientNumber}}</h5>
+                <h5 class="text-center"> Generated number is {{randomNum}}</h5>
+            </div>
+        {% endif %}
+
+        {% if {{clientNumber}} == {{randomNum}} %} 
+            <div style="width: 600px; height: 500px; margin: 50px auto; background-color: green">
+                <h2 class="text-center"> The Number is Greater !</h2>
+                <h5 class="text-center"> your number is {{clientNumber}}</h5>
+                <h5 class="text-center"> Generated number is {{randomNum}}</h5>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

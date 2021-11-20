@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <h4 style="text-decoration: underline; ">Submitted Info</h4>
+    <p style="margin-left: 15px;">Name: {{request.form['name']}}</p>
+    <p style="margin-left: 15px;">Dojo Location: {{ request.form['location'] }}</p>
+    <p style="margin-left: 15px;">Favorite Language: {{ request.form['language'] }}</p>
+    <p style="margin-left: 15px;">Comment: {{ request.form['message']}}</p>
+    
+    <div>
+        <input class="btn btn-primary mb-2" type='submit' value='Submit'>
+    </div>
+</body>
+</html>
